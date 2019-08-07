@@ -1,12 +1,27 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from '../App.css';
+import Title from '../components/Title';
 
 class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {//początkowy stan aplikacji
-            data: []
+            data: [
+                {
+                    id: 1,
+                    text: 'Task no 1'
+                },
+                {
+                    id: 2,
+                    text: 'Task no 2'
+                },
+                {
+                    id: 3,
+                    text: 'Task no 3'
+                }
+            ],
+            title: 'To do list with React and webpack'
         };
     }
 
@@ -15,7 +30,7 @@ class App extends React.Component {
             text: val,
             id: uuid.v4(),//biblioteka uuid generuje unikalne wartości, które będą dla nas kluczami
         };
-        const data = [...this.state.data, todo];//const zapeani, że zmienna nie zostanie nadpisana, spread tablicy i jednoczesne tworzenie nowej tablicyz dodatkowym elementem todo na końcu - działa jak metoda push ale bez modyfikacji stanu
+        const data = [...this.state.data, todo];//const zapewnia, że zmienna nie zostanie nadpisana, spread tablicy i jednoczesne tworzenie nowej tablicyz dodatkowym elementem todo na końcu - działa jak metoda push ale bez modyfikacji stanu
         this.setState({data});//skrócony zapis obiektu {data: data}
     }
 
@@ -27,7 +42,7 @@ class App extends React.Component {
     render() {
       return (
           <div className={style.TodoApp}>
-              Tutaj pojawią się komponenty naszej aplikacji.
+              <Title title={this.state.title} length={this.state.data.length} />
           </div>
       );
     }
