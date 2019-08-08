@@ -1,0 +1,20 @@
+.addtaskinput, .addtaskbutton {
+  display: block;
+  margin: 0 auto;
+}
+.addtaskbutton {
+  margin-top: 10px;
+  width: 200px;
+  background-color: lightgreen;
+  border: 1px solid lightgreen;
+  height: 34px;
+  line-height: 34px;
+  border-radius: 17px;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 17px;
+  overflow: hidden;
+}
+
+.addtaskinput{
+  width: 300px;
+}
