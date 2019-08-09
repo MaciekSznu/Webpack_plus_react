@@ -5,7 +5,7 @@ const Title = props => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <p className={style.taskcounter}>Number of tasks {props.length}</p>
+      <h2 className={style.taskcounter}>Number of tasks: {props.length}</h2>
     </div>
   )
 }

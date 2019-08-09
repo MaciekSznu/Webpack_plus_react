@@ -1,16 +1,20 @@
+* {
+  box-sizing: border-box;
+}
 .listelement {
   list-style: none;
-  width: 300px;
-  height: 30px;
-  line-height: 30px;
+  width: 400px;
+  height: 34px;
+  line-height: 34px;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif; 
   font-size: 18px;
-  color: white;
+  color:  rgb(53, 3, 100);
   text-align: center;
-  background-color: blueviolet;
-  border: 1px solid blueviolet;
-  border-radius: 15px;
+  background-color:  rgb(195, 152, 235);
+  border: none;
+  border-top: 2px solid blueviolet;
+  border-bottom: 2px solid blueviolet;
   margin-bottom: 10px;
   cursor: pointer;
 }

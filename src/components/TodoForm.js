@@ -14,10 +14,15 @@ class TodoForm extends React.Component {//nowa klasa TodoForm
   handleClick() {//po kliknięciu dodaje elemet korzystając z funkcji addTodo przyjmując jako stan wpisaną zawartość
     this.props.addTodo(this.state.content)
   }
+  handleKeyEnter(e) {
+    if (e.keyCode == '13') {
+      this.props.addTodo(this.state.content)
+    }
+  }
 
   render() {//dodajemy pole input zawierające wpisany task i obsługujące funkcję handleChange oraz button dodający nowy task do listy za pomoca funkcji handleClick
     return <div>
-      <input  className={style.addtaskinput} type="text" placeholder='Dodaj zadanie' value={this.state.content} onChange={this.handleChange.bind(this)} />
+      <input  className={style.addtaskinput} type="text" placeholder="Add task name & press Enter or click Add new task button" value={this.state.content} onChange={this.handleChange.bind(this)} onKeyDown={this.handleKeyEnter.bind(this)} />
       <button className={style.addtaskbutton} onClick={this.handleClick.bind(this)}>Add new task</button>
     </div>
   }

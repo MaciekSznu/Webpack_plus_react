@@ -35,8 +35,12 @@ class App extends React.Component {
             text: val,
             id: uuid.v4(),//biblioteka uuid generuje unikalne wartości, które będą dla nas kluczami
         };
+        if (todo.text.trim() !== '') {
         const data = [...this.state.data, todo];//const zapewnia, że zmienna nie zostanie nadpisana, spread tablicy i jednoczesne tworzenie nowej tablicyz dodatkowym elementem todo na końcu - działa jak metoda push ale bez modyfikacji stanu
         this.setState({data});//skrócony zapis obiektu {data: data}
+        } else {
+            alert('Podaj nazwę zadania')
+        }
     }
 
     removeTodo(id) {//metoda usuwająca elementy z listy
