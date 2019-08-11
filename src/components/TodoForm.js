@@ -8,16 +8,18 @@ class TodoForm extends React.Component {//nowa klasa TodoForm
   }
 
   handleChange(e) {//po zmianie zawartości zmienia stan na  wpisaną zawartość
-    this.setState({content: e.target.value})
+    this.setState({content: e.target.value});
   }
 
   handleClick() {//po kliknięciu dodaje elemet korzystając z funkcji addTodo przyjmując jako stan wpisaną zawartość
-    this.props.addTodo(this.state.content)
+    this.props.addTodo(this.state.content);
+    this.setState({content: ''})//przywracamy placeholdera do inputa
   }
   handleKeyEnter(e) {
     if (e.keyCode == '13') {
       this.props.addTodo(this.state.content)
     }
+    this.setState({content: ''})
   }
 
   render() {//dodajemy pole input zawierające wpisany task i obsługujące funkcję handleChange oraz button dodający nowy task do listy za pomoca funkcji handleClick
