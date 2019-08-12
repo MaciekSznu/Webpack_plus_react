@@ -17,9 +17,9 @@ class TodoForm extends React.Component {//nowa klasa TodoForm
   }
   handleKeyEnter(e) {
     if (e.keyCode == '13') {
-      this.props.addTodo(this.state.content)
+      this.props.addTodo(this.state.content);
+      this.setState({content: ''})
     }
-    this.setState({content: ''})
   }
 
   render() {//dodajemy pole input zawierające wpisany task i obsługujące funkcję handleChange oraz button dodający nowy task do listy za pomoca funkcji handleClick
